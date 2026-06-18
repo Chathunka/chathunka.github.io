@@ -1,0 +1,79 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import AdSlot from "../components/AdSlot.astro";
+import TagList from "../components/TagList.astro";
+import { formatDate, readingTime } from "../utils/site";
+import { render } from "astro:content";
+
+type Heading = { depth: number; slug: string; text: string };
+const { entry, headings } = Astro.props as { entry: any; headings: Heading[] };
+const { Content } = await render(entry);
+const minutes = readingTime(entry.body);
+const canonical = `/articles/${entry.id}`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: entry.data.title,
+  description: entry.data.description,
+  image: new URL(entry.data.cover, "https://edgeintellab.com").toString(),
+  datePublished: entry.data.publishDate.toISOString(),
+  dateModified: (entry.data.updatedDate ?? entry.data.publishDate).toISOString(),
+  publisher: {
+    "@type": "Organization",
+    name: "EdgeIntellab",
+    url: "https://edgeintellab.com",
+  },
+};
+---
+
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  image={entry.data.cover}
+  canonical={canonical}
+  type="article"
+  structuredData={articleSchema}
+>
+  <main class="article-shell">
+    <section class="article-hero">
+      <div class="eyebrow">{entry.data.category}</div>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+      <div class="article-meta">
+        <span>{formatDate(entry.data.publishDate)}</span>
+        <span>{minutes} min read</span>
+      </div>
+      <TagList tags={entry.data.tags} />
+    </section>
+
+    <AdSlot variant="header" />
+
+    <div class="article-grid">
+      <aside class="toc" aria-label="Table of contents">
+        <span class="toc-title">Contents</span>
+        {headings.length > 0 && (
+          <ol>
+            {headings.filter((heading: Heading) => heading.depth < 4).map((heading: Heading) => (
+              <li class={`depth-${heading.depth}`}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        )}
+      </aside>
+      <article class="prose">
+        <img class="article-cover" src={entry.data.cover} alt="" loading="eager" />
+        <Content />
+        <AdSlot variant="in-article" />
+        <section class="share-strip" aria-label="Share">
+          <span>Share</span>
+          <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://edgeintellab.com${canonical}`}>LinkedIn</a>
+          <a href={`https://twitter.com/intent/tweet?url=https://edgeintellab.com${canonical}&text=${encodeURIComponent(entry.data.title)}`}>X</a>
+        </section>
+      </article>
+      <aside class="rail">
+        <AdSlot variant="sidebar" />
+      </aside>
+    </div>
+  </main>
+</BaseLayout>

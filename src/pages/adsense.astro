@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AdSlot from "../components/AdSlot.astro";
+---
+
+<BaseLayout title="AdSense setup" description="AdSense-ready placement documentation for EdgeIntellab.">
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Monetization</span>
+        <h1>AdSense setup</h1>
+        <p>Reusable ad zones are present without publisher IDs. Insert future Google AdSense code inside the shared ad component when the account is ready.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="doc-panel">
+        <h2>Configured zones</h2>
+        <ul>
+          <li>Header ads between primary content sections.</li>
+          <li>Sidebar ads on article and project detail layouts.</li>
+          <li>In-article ads after the main article body.</li>
+          <li>Footer ads before the global footer.</li>
+        </ul>
+      </div>
+      <div class="doc-panel">
+        <h2>Implementation note</h2>
+        <p>Edit <code>src/components/AdSlot.astro</code> when Google provides publisher and slot IDs. Keep placeholders visible in development and gate live scripts by environment if needed.</p>
+      </div>
+      <AdSlot variant="sidebar" />
+    </div>
+  </main>
+</BaseLayout>

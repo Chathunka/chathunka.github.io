@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import { categories } from "../../data/categories";
+import { slugify } from "../../utils/site";
+
+export async function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category: slugify(category.name) },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const posts = (await getCollection("posts")).filter((post) => slugify(post.data.category) === slugify(category.name));
+const projects = (await getCollection("projects")).filter((project) => slugify(project.data.category) === slugify(category.name));
+---
+
+<BaseLayout title={category.name} description={category.summary} canonical={`/categories/${slugify(category.name)}`}>
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Category</span>
+        <h1>{category.name}</h1>
+        <p>{category.summary}</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      {posts.map((entry) => <ArticleCard entry={entry} />)}
+      {projects.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </main>
+</BaseLayout>

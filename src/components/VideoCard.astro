@@ -1,0 +1,18 @@
+---
+const { video, large = false } = Astro.props;
+---
+
+<article class={`video-card ${large ? "large" : ""}`}>
+  <a class="video-thumb" href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noreferrer">
+    <img src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`} alt="" loading="lazy" />
+    <span aria-hidden="true">Play</span>
+  </a>
+  <div>
+    <div class="card-kicker">
+      <span>{video.category}</span>
+      <span>{video.duration}</span>
+    </div>
+    <h3>{video.title}</h3>
+    <p>{video.description}</p>
+  </div>
+</article>

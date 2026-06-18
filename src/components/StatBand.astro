@@ -1,0 +1,13 @@
+---
+type StatItem = { value: string; label: string };
+const { items } = Astro.props as { items: StatItem[] };
+---
+
+<div class="stat-band">
+  {items.map((item: StatItem) => (
+    <div>
+      <strong>{item.value}</strong>
+      <span>{item.label}</span>
+    </div>
+  ))}
+</div>

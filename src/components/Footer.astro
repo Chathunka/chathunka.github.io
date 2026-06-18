@@ -1,0 +1,40 @@
+---
+import { site } from "../utils/site";
+import { categories } from "../data/categories";
+import { slugify } from "../utils/site";
+---
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="brand footer-brand" href="/">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span>{site.name}</span>
+      </a>
+      <p>{site.description}</p>
+    </div>
+    <div>
+      <span class="footer-title">Publication</span>
+      <a href="/articles">Articles</a>
+      <a href="/projects">Projects</a>
+      <a href="/videos">Videos</a>
+      <a href="/categories">Categories</a>
+    </div>
+    <div>
+      <span class="footer-title">Topics</span>
+      {categories.slice(0, 5).map((category) => (
+        <a href={`/categories/${slugify(category.name)}`}>{category.name}</a>
+      ))}
+    </div>
+    <div>
+      <span class="footer-title">Monetization</span>
+      <a href="/adsense">AdSense setup</a>
+      <a href="/rss.xml">RSS feed</a>
+      <a href="/sitemap-index.xml">Sitemap</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright {new Date().getFullYear()} EdgeIntellab.</span>
+    <span>Built for static delivery on GitHub Pages.</span>
+  </div>
+</footer>

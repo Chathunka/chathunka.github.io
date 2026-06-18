@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagList from "../../components/TagList.astro";
+import AdSlot from "../../components/AdSlot.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as any;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description} image={entry.data.cover} canonical={`/projects/${entry.id}`}>
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">{entry.data.category}</span>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+        <TagList tags={entry.data.tags} />
+      </div>
+    </div>
+    <div class="article-grid">
+      <aside class="toc">
+        <span class="toc-title">Specs</span>
+        <ul class="spec-list">
+          {entry.data.specs.map((spec: string) => <li>{spec}</li>)}
+        </ul>
+        {entry.data.github && <a class="button secondary" href={entry.data.github}>GitHub</a>}
+      </aside>
+      <article class="prose project-detail">
+        <img class="article-cover" src={entry.data.cover} alt="" loading="eager" />
+        <Content />
+      </article>
+      <aside class="rail"><AdSlot variant="sidebar" /></aside>
+    </div>
+  </main>
+</BaseLayout>

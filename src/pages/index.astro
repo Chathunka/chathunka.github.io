@@ -1,0 +1,123 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Newsletter from "../components/Newsletter.astro";
+import VideoCard from "../components/VideoCard.astro";
+import AdSlot from "../components/AdSlot.astro";
+import { categories } from "../data/categories";
+import { videos } from "../data/videos";
+import { categoryPath } from "../utils/site";
+
+const posts = (await getCollection("posts")).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+const featuredPosts = posts.filter((post) => post.data.featured).slice(0, 3);
+const latestPosts = posts.slice(0, 4);
+const projects = (await getCollection("projects")).filter((project) => project.data.featured).slice(0, 3);
+const featuredVideo = videos.find((video) => video.featured) ?? videos[0];
+---
+
+<BaseLayout
+  title="From Circuits to Intelligence"
+  description="Exploring embedded systems, edge AI, robotics, electronics, and software engineering."
+>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Engineering Publication</span>
+        <h1>From Circuits to Intelligence</h1>
+        <p>Exploring Embedded Systems, Edge AI, Robotics, Electronics, and Software Engineering.</p>
+        <div class="hero-actions">
+          <a class="button" href="/articles">Read Articles</a>
+          <a class="button secondary" href="/projects">Explore Projects</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Embedded systems, robotics, and edge AI visual">
+        <img src="/assets/covers/hero.jpg" alt="" loading="eager" />
+        <div class="signal-panel">
+          <div><span>Focus</span><strong>Embedded</strong></div>
+          <div><span>Systems</span><strong>Robotics</strong></div>
+          <div><span>Compute</span><strong>Edge AI</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Featured technologies</span>
+          <h2>Practical engineering across hardware, firmware, data, and software.</h2>
+        </div>
+      </div>
+      <div class="category-grid">
+        {categories.map((category) => (
+          <a class="category-tile" href={categoryPath(category.name)}>
+            <h3>{category.name}</h3>
+            <p>{category.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="section">
+      <AdSlot variant="header" />
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Featured articles</span>
+          <h2>Deep technical notes built for engineers who ship.</h2>
+        </div>
+        <a class="button secondary" href="/articles">All articles</a>
+      </div>
+      <div class="card-grid">
+        {featuredPosts.map((entry) => <ArticleCard entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Featured projects</span>
+          <h2>Reference architectures for embedded, IoT, robotics, and AI systems.</h2>
+        </div>
+        <a class="button secondary" href="/projects">Project archive</a>
+      </div>
+      <div class="card-grid">
+        {projects.map((entry) => <ProjectCard entry={entry} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Featured video</span>
+          <h2>Prepared for future tutorials, demonstrations, and engineering deep dives.</h2>
+        </div>
+        <a class="button secondary" href="/videos">Videos</a>
+      </div>
+      <VideoCard video={featuredVideo} large />
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Latest content</span>
+          <h2>Recent notes from the lab bench and the build pipeline.</h2>
+        </div>
+      </div>
+      <div class="card-grid">
+        {latestPosts.map((entry) => <ArticleCard entry={entry} compact />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <Newsletter />
+    </section>
+
+    <section class="section">
+      <AdSlot variant="footer" />
+    </section>
+  </main>
+</BaseLayout>

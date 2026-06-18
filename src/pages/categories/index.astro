@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categories } from "../../data/categories";
+import { categoryPath } from "../../utils/site";
+---
+
+<BaseLayout title="Categories" description="Browse EdgeIntellab content by technology category.">
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Browse</span>
+        <h1>Technology categories</h1>
+      </div>
+    </div>
+    <div class="category-grid">
+      {categories.map((category) => (
+        <a class="category-tile" href={categoryPath(category.name)}>
+          <h3>{category.name}</h3>
+          <p>{category.summary}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

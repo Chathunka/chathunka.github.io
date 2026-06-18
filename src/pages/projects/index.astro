@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = (await getCollection("projects")).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Projects" description="Embedded, robotics, electronics, AI, software, and IoT project references with technical specifications.">
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Engineering projects</span>
+        <h1>Projects</h1>
+        <p>Project pages support images, videos, GitHub links, documentation, architecture notes, and technical specifications.</p>
+      </div>
+    </div>
+    <div class="card-grid">
+      {projects.map((entry) => <ProjectCard entry={entry} />)}
+    </div>
+  </main>
+</BaseLayout>

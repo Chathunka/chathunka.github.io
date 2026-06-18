@@ -1,0 +1,19 @@
+---
+import TagList from "./TagList.astro";
+const { entry } = Astro.props;
+---
+
+<article class="content-card project-card">
+  <a href={`/projects/${entry.id}`} class="card-media">
+    <img src={entry.data.cover} alt="" loading="lazy" />
+  </a>
+  <div class="card-body">
+    <div class="card-kicker">
+      <span>{entry.data.category}</span>
+      <span>{entry.data.status}</span>
+    </div>
+    <h3><a href={`/projects/${entry.id}`}>{entry.data.title}</a></h3>
+    <p>{entry.data.description}</p>
+    <TagList tags={entry.data.tags.slice(0, 4)} />
+  </div>
+</article>

@@ -1,27 +1,26 @@
 {
-  "name": "chathunka-portfolio",
+  "name": "edgeintellab-site",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://chathunka.github.io/",
   "scripts": {
-    "dev": "vite",
-    "build": "npx vite build",
-    "preview": "vite preview",
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "lucide-react": "^0.513.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^7.6.2"
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^6.4.8",
+    "sharp": "^0.35.1"
+  },
+  "overrides": {
+    "esbuild": "0.28.1",
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.5.1",
-    "autoprefixer": "^10.4.14",
+    "@astrojs/check": "^0.9.9",
     "gh-pages": "^6.3.0",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.2",
-    "vite": "^4.5.0"
+    "typescript": "^6.0.3"
   }
 }

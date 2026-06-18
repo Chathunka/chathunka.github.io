@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatBand from "../components/StatBand.astro";
+import { portfolio } from "../data/portfolio";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: portfolio.name,
+  jobTitle: portfolio.title,
+  address: portfolio.location,
+  email: portfolio.email,
+  telephone: portfolio.phone,
+  url: "https://edgeintellab.com/chathunka",
+  sameAs: [portfolio.linkedin, portfolio.github],
+  knowsAbout: portfolio.expertise.flatMap((group) => group.skills).slice(0, 30),
+};
+---
+
+<BaseLayout
+  title={`${portfolio.name} - Engineering Portfolio`}
+  description={portfolio.summary}
+  canonical="/chathunka"
+  noindex
+  includeHeader={false}
+  includeFooter={false}
+  structuredData={personSchema}
+>
+  <main class="portfolio-private">
+    <div class="portfolio-shell">
+      <section class="portfolio-hero">
+        <div>
+          <span class="meta-label">Private professional portfolio</span>
+          <h1>{portfolio.name}</h1>
+          <p>{portfolio.title}</p>
+          <p>{portfolio.summary}</p>
+          <div class="portfolio-actions">
+            <a href={portfolio.resume}>Download resume</a>
+            <a class="secondary" href={portfolio.linkedin}>LinkedIn</a>
+            <a class="secondary" href={portfolio.github}>GitHub</a>
+          </div>
+        </div>
+        <aside class="metric resume-meta">
+          <strong>Japan</strong>
+          <span>{portfolio.location}</span>
+          <span>{portfolio.email}</span>
+          <span>{portfolio.phone}</span>
+        </aside>
+      </section>
+
+      <StatBand
+        items={[
+          { value: "12+", label: "Years across embedded systems, software, and IoT" },
+          { value: "GPU/FPGA", label: "Kria K26 and Jetson Orin optimization" },
+          { value: "ROS 2", label: "Robot control, SLAM, and micro-ROS systems" },
+          { value: "IIoT", label: "Industrial gateways, telemetry, and cloud dashboards" },
+        ]}
+      />
+
+      <section class="portfolio-section">
+        <h2>Technical Expertise</h2>
+        <div class="portfolio-grid">
+          {portfolio.expertise.map((group) => (
+            <article class="portfolio-card">
+              <h3>{group.area}</h3>
+              <div class="tag-list">
+                {group.skills.map((skill) => <span>{skill}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <h2>Professional Experience</h2>
+        <div class="portfolio-grid two">
+          {portfolio.experience.map((job) => (
+            <article class="portfolio-card">
+              <span class="meta-label">{job.period}</span>
+              <h3>{job.role}</h3>
+              <p>{job.company} - {job.location}</p>
+              <ul>
+                {job.bullets.map((bullet) => <li>{bullet}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <h2>Major Projects</h2>
+        <div class="portfolio-grid two">
+          {portfolio.projects.map((project) => (
+            <article class="portfolio-card">
+              <span class="meta-label">{project.period}</span>
+              <h3>{project.title}</h3>
+              <p><strong>{project.context}</strong></p>
+              <p>{project.impact}</p>
+              <div class="tag-list">
+                {project.technologies.map((tech) => <span>{tech}</span>)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <h2>Education and Certifications</h2>
+        <div class="portfolio-grid two">
+          <article class="portfolio-card">
+            <h3>Education</h3>
+            <ul>{portfolio.education.map((item) => <li>{item}</li>)}</ul>
+          </article>
+          <article class="portfolio-card">
+            <h3>Certifications</h3>
+            <ul>{portfolio.certifications.map((item) => <li>{item}</li>)}</ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <h2>Research and Achievements</h2>
+        <div class="portfolio-grid two">
+          <article class="portfolio-card">
+            <h3>Research</h3>
+            <ul>{portfolio.research.map((item) => <li>{item}</li>)}</ul>
+          </article>
+          <article class="portfolio-card">
+            <h3>Achievements</h3>
+            <ul>{portfolio.achievements.map((item) => <li>{item}</li>)}</ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio-section">
+        <div class="portfolio-card">
+          <h2>Contact</h2>
+          <p>Available for senior embedded systems, robotics, AI/ML tooling, IIoT, and engineering leadership conversations.</p>
+          <div class="portfolio-actions">
+            <a href={`mailto:${portfolio.email}`}>Email</a>
+            <a class="secondary" href={portfolio.linkedin}>LinkedIn</a>
+            <a class="secondary" href={portfolio.resume}>Resume PDF</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

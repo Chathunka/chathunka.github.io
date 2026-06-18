@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import VideoCard from "../components/VideoCard.astro";
+import { videos } from "../data/videos";
+---
+
+<BaseLayout title="Videos" description="Video architecture prepared for future tutorials, project demonstrations, and engineering deep dives.">
+  <main class="section">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Video lab</span>
+        <h1>Videos</h1>
+        <p>Reusable video cards and featured sections are ready for future YouTube expansion.</p>
+      </div>
+    </div>
+    <div class="video-grid">
+      {videos.map((video) => <VideoCard video={video} />)}
+    </div>
+  </main>
+</BaseLayout>

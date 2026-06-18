@@ -1,0 +1,15 @@
+---
+const { variant = "inline" } = Astro.props;
+const labels = {
+  header: "Header ad",
+  sidebar: "Sidebar ad",
+  "in-article": "In-article ad",
+  footer: "Footer ad",
+  inline: "Advertisement",
+};
+const label = labels[variant] ?? "Advertisement";
+---
+
+<aside class={`ad-slot ad-${variant}`} aria-label={label}>
+  <span>{label}</span>
+</aside>

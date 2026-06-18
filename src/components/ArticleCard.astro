@@ -1,0 +1,24 @@
+---
+import TagList from "./TagList.astro";
+import { formatDate, readingTime } from "../utils/site";
+
+const { entry, compact = false } = Astro.props;
+---
+
+<article class={`content-card ${compact ? "compact" : ""}`} data-search-card data-title={entry.data.title.toLowerCase()} data-tags={entry.data.tags.join(" ").toLowerCase()} data-category={entry.data.category.toLowerCase()}>
+  <a href={`/articles/${entry.id}`} class="card-media">
+    <img src={entry.data.cover} alt="" loading="lazy" />
+  </a>
+  <div class="card-body">
+    <div class="card-kicker">
+      <span>{entry.data.category}</span>
+      <span>{formatDate(entry.data.publishDate)}</span>
+    </div>
+    <h3><a href={`/articles/${entry.id}`}>{entry.data.title}</a></h3>
+    {!compact && <p>{entry.data.description}</p>}
+    <div class="card-footer">
+      <span>{readingTime(entry.body)} min read</span>
+      <TagList tags={entry.data.tags.slice(0, 3)} />
+    </div>
+  </div>
+</article>
