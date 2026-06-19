@@ -9,7 +9,7 @@ import AdSlot from "../components/AdSlot.astro";
       <div>
         <span class="eyebrow">Monetization</span>
         <h1>AdSense setup</h1>
-        <p>Reusable ad zones are present without publisher IDs. Insert future Google AdSense code inside the shared ad component when the account is ready.</p>
+        <p>Google AdSense publisher verification is configured for EdgeIntellab. Auto Ads can be managed from the AdSense dashboard.</p>
       </div>
     </div>
     <div class="card-grid">
@@ -24,7 +24,7 @@ import AdSlot from "../components/AdSlot.astro";
       </div>
       <div class="doc-panel">
         <h2>Implementation note</h2>
-        <p>Edit <code>src/components/AdSlot.astro</code> when Google provides publisher and slot IDs. Keep placeholders visible in development and gate live scripts by environment if needed.</p>
+        <p>The publisher script is loaded from <code>src/layouts/BaseLayout.astro</code> on public pages. Add individual slot IDs to <code>src/components/AdSlot.astro</code> when manual ad units are created in AdSense.</p>
       </div>
       <AdSlot variant="sidebar" />
     </div>

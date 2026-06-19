@@ -55,6 +55,17 @@ const schema =
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {!noindex && (
+      <>
+        <meta name="google-adsense-account" content="ca-pub-6236938492452795" />
+        <script
+          is:inline
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6236938492452795"
+          crossorigin="anonymous"
+        ></script>
+      </>
+    )}
     <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>
   <body>

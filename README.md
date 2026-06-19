@@ -83,7 +83,9 @@ The videos page and homepage featured video section will update from this data.
 
 ## Add Google AdSense
 
-Ad zones are centralized in `src/components/AdSlot.astro`. Replace the placeholder markup there with the AdSense script and slot configuration after Google provides publisher IDs.
+The AdSense publisher script and account metadata are configured in `src/layouts/BaseLayout.astro`. Publisher verification is also available through `public/ads.txt`.
+
+Ad zones are centralized in `src/components/AdSlot.astro`. Replace placeholder markup with responsive `<ins class="adsbygoogle">` units after creating manual ad slots in AdSense.
 
 Current placement types:
 
@@ -92,7 +94,7 @@ Current placement types:
 - In-article ad
 - Footer ad
 
-Do not hard-code live publisher IDs into content files.
+Do not add publisher or slot IDs to Markdown content files.
 
 ## Private portfolio
 
