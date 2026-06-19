@@ -102,6 +102,26 @@ The private recruiter portfolio is available at `/chathunka`. It is intentionall
 
 The portfolio content is generated from `src/data/portfolio.js`, which was prepared from the CV files in `temp/`.
 
+## Project showcase knowledge base
+
+Historical project assets were analyzed and migrated non-destructively from:
+
+`C:\Users\cjten\Desktop\Project Showcase_Master`
+
+The organized editorial archive is available at:
+
+`C:\Users\cjten\Desktop\Project Showcase_Organized`
+
+Migration reports, GitHub mappings, blog drafts, YouTube packages, and content strategy documents are stored in `docs/project-showcase/`.
+
+To refresh the organized archive and generated showcase content:
+
+```bash
+npm run showcase:migrate
+```
+
+The migration preserves original source files, verifies copied assets with SHA-256 hashes, and excludes only operating-system metadata files.
+
 ## GitHub Pages deployment
 
 The project is configured for the custom domain `edgeintellab.com` with `public/CNAME`.

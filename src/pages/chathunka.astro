@@ -93,7 +93,9 @@ const personSchema = {
           {portfolio.projects.map((project) => (
             <article class="portfolio-card">
               <span class="meta-label">{project.period}</span>
-              <h3>{project.title}</h3>
+              <h3>
+                {project.showcaseUrl ? <a href={project.showcaseUrl}>{project.title}</a> : project.title}
+              </h3>
               <p><strong>{project.context}</strong></p>
               <p>{project.impact}</p>
               <div class="tag-list">

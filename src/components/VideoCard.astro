@@ -1,11 +1,16 @@
 ---
 const { video, large = false } = Astro.props;
+const href = video.youtubeId ? `https://www.youtube.com/watch?v=${video.youtubeId}` : video.url;
+const image = video.youtubeId
+  ? `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`
+  : video.cover;
+const action = video.youtubeId ? "Play" : "View project";
 ---
 
 <article class={`video-card ${large ? "large" : ""}`}>
-  <a class="video-thumb" href={`https://www.youtube.com/watch?v=${video.youtubeId}`} target="_blank" rel="noreferrer">
-    <img src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`} alt="" loading="lazy" />
-    <span aria-hidden="true">Play</span>
+  <a class="video-thumb" href={href} target={video.youtubeId ? "_blank" : undefined} rel={video.youtubeId ? "noreferrer" : undefined}>
+    <img src={image} alt="" loading="lazy" />
+    <span>{action}</span>
   </a>
   <div>
     <div class="card-kicker">

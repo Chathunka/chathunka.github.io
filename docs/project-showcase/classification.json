@@ -1,0 +1,370 @@
+[
+  {
+    "title": "CNC 2D Drawing Plotter",
+    "slug": "2d-drawing-plotter",
+    "category": "Robotics",
+    "industry": "Digital fabrication",
+    "discipline": "Motion control and mechatronics",
+    "confidence": "confirmed",
+    "files": 7,
+    "sizeMB": 1531.6,
+    "repositories": []
+  },
+  {
+    "title": "2D SLAM Mobile Robot",
+    "slug": "2d-slam-mobile-robot",
+    "category": "Robotics",
+    "industry": "Autonomous systems",
+    "discipline": "Mapping and localization",
+    "confidence": "confirmed",
+    "files": 3,
+    "sizeMB": 993.3,
+    "repositories": [
+      "https://github.com/Chathunka/ros2_cartographer"
+    ]
+  },
+  {
+    "title": "Additive Manufacturing and CAD Prototypes",
+    "slug": "additive-manufacturing-prototypes",
+    "category": "Research and Experimental Projects",
+    "industry": "Product prototyping",
+    "discipline": "CAD and digital fabrication",
+    "confidence": "confirmed",
+    "files": 32,
+    "sizeMB": 1183.7,
+    "repositories": []
+  },
+  {
+    "title": "Beer Keg Telemetry Data Logger and RTU",
+    "slug": "beer-keg-telemetry-rtu",
+    "category": "IoT",
+    "industry": "Beverage dispensing",
+    "discipline": "Industrial telemetry and embedded electronics",
+    "confidence": "confirmed",
+    "files": 22,
+    "sizeMB": 46.9,
+    "repositories": []
+  },
+  {
+    "title": "Biogas Production and Burner Experiment",
+    "slug": "biogas-experimental-system",
+    "category": "Research and Experimental Projects",
+    "industry": "Renewable energy",
+    "discipline": "Energy systems prototyping",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 321.9,
+    "repositories": []
+  },
+  {
+    "title": "Device Condition Monitoring Dashboard",
+    "slug": "device-condition-monitoring-dashboard",
+    "category": "Software Development",
+    "industry": "Industrial monitoring",
+    "discipline": "Operational dashboards",
+    "confidence": "inferred - confirm DCM expansion",
+    "files": 1,
+    "sizeMB": 3.1,
+    "repositories": []
+  },
+  {
+    "title": "Industrial Dangerous Gas Monitoring System",
+    "slug": "dangerous-gas-monitoring",
+    "category": "IoT",
+    "industry": "Port and industrial safety",
+    "discipline": "Industrial IoT and safety monitoring",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 3.2,
+    "repositories": [
+      "https://github.com/Chathunka/O2-Sensor_ModBus_Read",
+      "https://github.com/Chathunka/ESP32_ModBus_MAX485_Serial"
+    ]
+  },
+  {
+    "title": "Digital Queue Display System",
+    "slug": "digital-queue-display",
+    "category": "Electronics",
+    "industry": "Customer service and queue management",
+    "discipline": "Display electronics and embedded control",
+    "confidence": "confirmed",
+    "files": 38,
+    "sizeMB": 112.1,
+    "repositories": []
+  },
+  {
+    "title": "Operator Fatigue Management Installation",
+    "slug": "operator-fatigue-management",
+    "category": "Automotive Systems",
+    "industry": "Heavy equipment and industrial vehicles",
+    "discipline": "Vehicle safety systems",
+    "confidence": "asset evidence - detailed system specification unavailable",
+    "files": 2,
+    "sizeMB": 6.6,
+    "repositories": []
+  },
+  {
+    "title": "Fingerprint and Keypad Access Terminal",
+    "slug": "fingerprint-access-terminal",
+    "category": "Embedded Systems",
+    "industry": "Access control",
+    "discipline": "Biometric embedded systems",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 5.5,
+    "repositories": []
+  },
+  {
+    "title": "Four-Channel Humidifier Controller",
+    "slug": "four-channel-humidifier-controller",
+    "category": "Embedded Systems",
+    "industry": "Environmental control",
+    "discipline": "Firmware and PCB design",
+    "confidence": "confirmed",
+    "files": 11,
+    "sizeMB": 163.6,
+    "repositories": [
+      "https://github.com/Chathunka/Arduino-Humidifier"
+    ]
+  },
+  {
+    "title": "Laser Cutting and Engraving Prototypes",
+    "slug": "laser-cutting-fabrication",
+    "category": "Research and Experimental Projects",
+    "industry": "Digital fabrication",
+    "discipline": "Manufacturing and product prototyping",
+    "confidence": "confirmed",
+    "files": 6,
+    "sizeMB": 290,
+    "repositories": []
+  },
+  {
+    "title": "Modbus Oxygen Sensor Reader",
+    "slug": "modbus-oxygen-sensor-reader",
+    "category": "Embedded Systems",
+    "industry": "Environmental monitoring",
+    "discipline": "Industrial communications",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 136.8,
+    "repositories": [
+      "https://github.com/Chathunka/O2-Sensor_ModBus_Read",
+      "https://github.com/Chathunka/ESP32_ModBus_MAX485_Serial"
+    ]
+  },
+  {
+    "title": "OpenGL Virtual Room Simulation",
+    "slug": "opengl-virtual-room",
+    "category": "Software Development",
+    "industry": "Computer graphics",
+    "discipline": "3D rendering and simulation",
+    "confidence": "confirmed",
+    "files": 20,
+    "sizeMB": 6.8,
+    "repositories": []
+  },
+  {
+    "title": "ET Robocon Entry Robot Control System",
+    "slug": "et-robocon-entry-robot",
+    "category": "Robotics",
+    "industry": "Robotics competition",
+    "discipline": "Autonomous control software",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 77.4,
+    "repositories": []
+  },
+  {
+    "title": "Aircraft Training Student Management System",
+    "slug": "student-management-system",
+    "category": "Software Development",
+    "industry": "Aviation training",
+    "discipline": "Database application development",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 0.4,
+    "repositories": []
+  },
+  {
+    "title": "Rapid Prototyping and Custom Control Artifacts",
+    "slug": "rapid-prototyping-artifacts",
+    "category": "Research and Experimental Projects",
+    "industry": "Product development",
+    "discipline": "Mechanical and electronics prototyping",
+    "confidence": "confirmed",
+    "files": 12,
+    "sizeMB": 110.2,
+    "repositories": []
+  },
+  {
+    "title": "Compact Environmental Chamber Prototype",
+    "slug": "compact-environmental-chamber",
+    "category": "IoT",
+    "industry": "Environmental control",
+    "discipline": "Embedded monitoring prototype",
+    "confidence": "asset evidence - detailed specification unavailable",
+    "files": 4,
+    "sizeMB": 293.7,
+    "repositories": []
+  },
+  {
+    "title": "Humanoid Robot Motion Demonstration",
+    "slug": "humanoid-robot-demonstration",
+    "category": "Robotics",
+    "industry": "Educational robotics",
+    "discipline": "Robot motion and actuation",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 147.1,
+    "repositories": []
+  },
+  {
+    "title": "Pure Sine Wave Inverter Controller",
+    "slug": "pure-sine-wave-inverter",
+    "category": "Electronics",
+    "industry": "Power conversion",
+    "discipline": "Power electronics and embedded control",
+    "confidence": "confirmed",
+    "files": 7,
+    "sizeMB": 73.3,
+    "repositories": []
+  },
+  {
+    "title": "Hand-Drawn ER Diagram Digitizer",
+    "slug": "er-diagram-digitizer",
+    "category": "AI & Machine Learning",
+    "industry": "Developer tools and education",
+    "discipline": "Computer vision and document understanding",
+    "confidence": "confirmed",
+    "files": 4,
+    "sizeMB": 3.8,
+    "repositories": []
+  },
+  {
+    "title": "RFID Inventory and Swipe Reader Terminal",
+    "slug": "rfid-inventory-terminal",
+    "category": "IoT",
+    "industry": "Inventory and identification",
+    "discipline": "Embedded identification systems",
+    "confidence": "confirmed",
+    "files": 5,
+    "sizeMB": 238.1,
+    "repositories": [
+      "https://github.com/Chathunka/RDM6300_RFID_Swipe_Reader-Arduino",
+      "https://github.com/Chathunka/RDM6300_RFID_Swipe_Reader-ESP32",
+      "https://github.com/Chathunka/Inventory-Management-RFID"
+    ]
+  },
+  {
+    "title": "GSM Smart Cooler Data Logger and Protection Unit",
+    "slug": "smart-cooler-logger",
+    "category": "IoT",
+    "industry": "Cold-chain and equipment monitoring",
+    "discipline": "Embedded telemetry and condition monitoring",
+    "confidence": "confirmed",
+    "files": 63,
+    "sizeMB": 219.4,
+    "repositories": []
+  },
+  {
+    "title": "Automatic Tennis Ball Training Machine",
+    "slug": "automatic-tennis-ball-shooter",
+    "category": "Robotics",
+    "industry": "Sports technology",
+    "discipline": "Mechatronics and motion systems",
+    "confidence": "confirmed",
+    "files": 6,
+    "sizeMB": 52,
+    "repositories": []
+  },
+  {
+    "title": "USB-Configurable Vending Machine Controller",
+    "slug": "vending-machine-controller",
+    "category": "Embedded Systems",
+    "industry": "Retail automation",
+    "discipline": "Embedded motor control and desktop utilities",
+    "confidence": "confirmed",
+    "files": 15,
+    "sizeMB": 49,
+    "repositories": []
+  },
+  {
+    "title": "Fleet Tracking and Vehicle Telemetry Platform",
+    "slug": "fleet-tracking-platform",
+    "category": "Automotive Systems",
+    "industry": "Fleet operations",
+    "discipline": "GPS tracking and IoT software",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 51.5,
+    "repositories": []
+  },
+  {
+    "title": "Arduino Line-Following Robot",
+    "slug": "line-following-robot",
+    "category": "Robotics",
+    "industry": "Educational robotics",
+    "discipline": "Sensor-based motion control",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 4.6,
+    "repositories": []
+  },
+  {
+    "title": "Obstacle-Avoiding Robot Car Variants",
+    "slug": "obstacle-avoiding-robot",
+    "category": "Robotics",
+    "industry": "Educational robotics",
+    "discipline": "Autonomous mobile control",
+    "confidence": "confirmed",
+    "files": 2,
+    "sizeMB": 15.7,
+    "repositories": []
+  },
+  {
+    "title": "Robotic Arm Prototype",
+    "slug": "robotic-arm-prototype",
+    "category": "Robotics",
+    "industry": "Educational robotics",
+    "discipline": "Manipulator design and control",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 222.2,
+    "repositories": []
+  },
+  {
+    "title": "Self-Balancing Two-Wheel Robot",
+    "slug": "self-balancing-robot",
+    "category": "Robotics",
+    "industry": "Control systems education",
+    "discipline": "Dynamic control",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 5.1,
+    "repositories": []
+  },
+  {
+    "title": "Sewing Machine Needle Detection System",
+    "slug": "sewing-needle-detector",
+    "category": "Electronics",
+    "industry": "Textile manufacturing",
+    "discipline": "Industrial sensing and quality control",
+    "confidence": "asset evidence - sensing method requires confirmation",
+    "files": 1,
+    "sizeMB": 56.6,
+    "repositories": []
+  },
+  {
+    "title": "Wi-Fi Smart Switch and Bulb Controller",
+    "slug": "wifi-switch-and-bulb",
+    "category": "IoT",
+    "industry": "Home and building automation",
+    "discipline": "Connected embedded products",
+    "confidence": "confirmed",
+    "files": 1,
+    "sizeMB": 874.6,
+    "repositories": [
+      "https://github.com/Chathunka/ESP8266"
+    ]
+  }
+]

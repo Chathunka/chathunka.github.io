@@ -167,6 +167,42 @@ export const portfolio = {
         "Built an ESP32-based UWB localization system using trilateration, mobile visualization, and web access for real-time indoor positioning.",
       technologies: ["UWB", "ESP32", "Flutter", "Web app", "Trilateration"],
     },
+    {
+      title: "GSM Smart Cooler Data Logger and Protection Unit",
+      period: "2018",
+      context: "Commercial embedded product prototype",
+      impact:
+        "Designed a packaged condition-monitoring unit for coolers with GSM/USB telemetry, temperature, vibration, noise, orientation, voltage and current sensing, PC configuration, and automatic compressor protection.",
+      technologies: ["GSM/GPRS", "Embedded firmware", "IMU", "Power monitoring", "Relay control"],
+      showcaseUrl: "/projects/showcase/smart-cooler-logger",
+    },
+    {
+      title: "Beer Keg Telemetry Data Logger and RTU",
+      period: "2016 - 2017",
+      context: "Industrial telemetry product",
+      impact:
+        "Developed a modular Wi-Fi/3G RTU for beer-flow, pressure, temperature, and cooler-power monitoring with offline buffering, HTTP/MQTT integration, relay control, and formal user documentation.",
+      technologies: ["IIoT", "MQTT", "GSM", "Azure IoT", "Analog and pulse sensing"],
+      showcaseUrl: "/projects/showcase/beer-keg-telemetry-rtu",
+    },
+    {
+      title: "Automatic Tennis Ball Training Machine",
+      period: "2018 - 2019",
+      context: "Mechatronics and sports engineering",
+      impact:
+        "Built a portable automatic launcher with controllable speed, spin, targeting angles, battery power management, and an adjustable ball-feeding mechanism.",
+      technologies: ["Motor control", "Mechatronics", "Automatic feeder", "Battery systems", "RF control"],
+      showcaseUrl: "/projects/showcase/automatic-tennis-ball-shooter",
+    },
+    {
+      title: "Hand-Drawn ER Diagram Digitizer",
+      period: "Research prototype",
+      context: "Computer vision and developer tooling",
+      impact:
+        "Created an OpenCV pipeline for denoising photographed diagrams, detecting contours, classifying ER symbols, resolving relationships, and generating structured SQL-oriented output.",
+      technologies: ["Python", "OpenCV", "Contour detection", "Shape classification", "Document understanding"],
+      showcaseUrl: "/projects/showcase/er-diagram-digitizer",
+    },
   ],
   education: [
     "B.Sc. Special in Computational Physics, University of Colombo (2012 - 2017)",

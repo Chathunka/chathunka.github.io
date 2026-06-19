@@ -30,6 +30,10 @@ const projects = defineCollection({
     github: z.url().optional(),
     video: z.url().optional(),
     specs: z.array(z.string()).default([]),
+    gallery: z.array(z.string()).default([]),
+    industry: z.string().optional(),
+    discipline: z.string().optional(),
+    archiveStatus: z.string().optional(),
   }),
 });
 

@@ -28,15 +28,39 @@ const { Content } = await render(entry);
     </div>
     <div class="article-grid">
       <aside class="toc">
+        {entry.data.industry && (
+          <div class="project-meta-block">
+            <span class="toc-title">Industry</span>
+            <p>{entry.data.industry}</p>
+          </div>
+        )}
+        {entry.data.discipline && (
+          <div class="project-meta-block">
+            <span class="toc-title">Discipline</span>
+            <p>{entry.data.discipline}</p>
+          </div>
+        )}
         <span class="toc-title">Specs</span>
         <ul class="spec-list">
           {entry.data.specs.map((spec: string) => <li>{spec}</li>)}
         </ul>
         {entry.data.github && <a class="button secondary" href={entry.data.github}>GitHub</a>}
+        {entry.data.video && <a class="button secondary" href={entry.data.video}>Watch video</a>}
       </aside>
       <article class="prose project-detail">
         <img class="article-cover" src={entry.data.cover} alt="" loading="eager" />
+        {entry.data.archiveStatus && (
+          <p class="archive-note"><strong>Archive status:</strong> {entry.data.archiveStatus}</p>
+        )}
         <Content />
+        {entry.data.gallery.length > 0 && (
+          <section>
+            <h2>Gallery</h2>
+            <div class="project-gallery">
+              {entry.data.gallery.map((image: string) => <img src={image} alt="" loading="lazy" />)}
+            </div>
+          </section>
+        )}
       </article>
       <aside class="rail"><AdSlot variant="sidebar" /></aside>
     </div>

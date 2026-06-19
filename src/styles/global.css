@@ -614,6 +614,67 @@ input {
   margin-bottom: 1rem;
 }
 
+.project-filters {
+  margin-bottom: 1.2rem;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.filter-button {
+  min-height: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.filter-button.active,
+.filter-button:hover {
+  border-color: rgba(231, 183, 93, 0.5);
+  background: var(--gold);
+  color: #12100a;
+}
+
+[data-project-card] {
+  min-width: 0;
+}
+
+.project-meta-block {
+  margin-bottom: 1.2rem;
+}
+
+.project-meta-block p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.archive-note {
+  border-left: 3px solid var(--gold);
+  padding: 0.65rem 0.8rem;
+  background: rgba(231, 183, 93, 0.08);
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.project-gallery img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
 .pager {
   display: flex;
   justify-content: center;

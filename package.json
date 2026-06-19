@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
+    "showcase:migrate": "node scripts/migrate-project-showcase.mjs",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

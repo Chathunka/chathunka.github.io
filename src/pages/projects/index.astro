@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ProjectCard from "../../components/ProjectCard.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const projectCategories = [...new Set(projects.map((project) => project.data.category))].sort();
 ---
 
 <BaseLayout title="Projects" description="Embedded, robotics, electronics, AI, software, and IoT project references with technical specifications.">
@@ -15,8 +16,51 @@ const projects = (await getCollection("projects")).sort((a, b) => a.data.title.l
         <p>Project pages support images, videos, GitHub links, documentation, architecture notes, and technical specifications.</p>
       </div>
     </div>
-    <div class="card-grid">
-      {projects.map((entry) => <ProjectCard entry={entry} />)}
+    <div class="search-panel project-filters">
+      <label for="project-search">Search projects</label>
+      <input id="project-search" type="search" placeholder="Try SLAM, Modbus, RFID, telemetry, or motor control" />
+      <div class="filter-buttons" aria-label="Filter by category">
+        <button class="filter-button active" type="button" data-project-filter="all">All</button>
+        {projectCategories.map((category) => (
+          <button class="filter-button" type="button" data-project-filter={category.toLowerCase()}>{category}</button>
+        ))}
+      </div>
+    </div>
+    <div class="card-grid" id="project-grid">
+      {projects.map((entry) => (
+        <div
+          data-project-card
+          data-title={entry.data.title.toLowerCase()}
+          data-tags={entry.data.tags.join(" ").toLowerCase()}
+          data-category={entry.data.category.toLowerCase()}
+        >
+          <ProjectCard entry={entry} />
+        </div>
+      ))}
     </div>
   </main>
+  <script is:inline>
+    const search = document.querySelector("#project-search");
+    const buttons = Array.from(document.querySelectorAll("[data-project-filter]"));
+    const cards = Array.from(document.querySelectorAll("[data-project-card]"));
+    let category = "all";
+
+    const updateProjects = () => {
+      const query = search?.value.trim().toLowerCase() ?? "";
+      cards.forEach((card) => {
+        const matchesText = `${card.dataset.title} ${card.dataset.tags}`.includes(query);
+        const matchesCategory = category === "all" || card.dataset.category === category;
+        card.hidden = !(matchesText && matchesCategory);
+      });
+    };
+
+    search?.addEventListener("input", updateProjects);
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        category = button.dataset.projectFilter;
+        buttons.forEach((item) => item.classList.toggle("active", item === button));
+        updateProjects();
+      });
+    });
+  </script>
 </BaseLayout>

@@ -31,4 +31,8 @@ export const categories = [
     name: "IoT",
     summary: "Gateways, connectivity, telemetry, cloud integrations, and field-ready platforms.",
   },
+  {
+    name: "Research and Experimental Projects",
+    summary: "Proofs of concept, digital fabrication, physical prototypes, and exploratory engineering.",
+  },
 ];
